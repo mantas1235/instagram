@@ -1,0 +1,165 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css");
+
+/* body {
+  background-image: url(https://media.istockphoto.com/photos/icon-like-heart-on-instagram-social-media-concept-picture-id1300810952?b=1&k=20&m=1300810952&s=170667a&w=0&h=ZSL08JHb6PUuSuFRVl2kx5B9grtQNtDY7yp5bnjkoAg=);
+background-repeat: no-repeat;
+background-size: cover;
+} */
+
+
+.articles {
+  width: 30%;
+
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  height: 450px;
+  margin-top: 50px;
+  width: 500px;
+}
+
+
+.container_login {
+  background-image: url(https://media.istockphoto.com/photos/icon-like-heart-on-instagram-social-media-concept-picture-id1300810952?b=1&k=20&m=1300810952&s=170667a&w=0&h=ZSL08JHb6PUuSuFRVl2kx5B9grtQNtDY7yp5bnjkoAg=);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 90vh;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.phone_image {
+  position: relative;
+  top: 30px;
+  
+  
+}
+
+.main_container {
+  background-color: #f4f4f6;
+}
+
+
+.container_login form {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  top: 250px;
+  left: 520px;
+}
+
+.container_login form input {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 2rem;
+  border: none;
+}
+
+
+
+  
+.button-34 {
+  margin-top: 50px;
+  background: #5E5DF0;
+  border-radius: 999px;
+  box-shadow: #5E5DF0 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 8px 18px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
+}
+
+
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.users {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 100px;
+  left: 150px;
+  display: flex;
+  background-color: #fdfdfd;
+border-radius: 0.5rem;
+width: 400px;
+height: 120px;
+overflow: auto;
+margin-left: 250px;
+
+}
+.heart {
+  width: 30px;
+  border: none;
+
+}
+
+.last_svg {
+  width: 300px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.svg_kontainer{
+  display: flex;
+}
+.useriai {
+ 
+  display: flex;
+  flex-direction: column;
+
+background-color: #fdfdfd;
+margin-left: 30px;
+}
+
+
+
+.useriai img {
+  border: 2px solid deeppink;
+  padding: 5px;
+  width: 50px;
+  border-radius: 50%;
+}
+.useriai img:hover{
+  transform:scale(1.2);
+  transition: 0.4s;
+}
+
+
+.mb-4 {
+  height: 50px;
+}
