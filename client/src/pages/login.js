@@ -1,6 +1,7 @@
 import { useState, useContext, } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import MainContext from '../MainContext'
 
 
 const Login = () => {
@@ -17,6 +18,8 @@ const Login = () => {
 
     const navigate = useNavigate()
 
+    const { setUserInfo } = useContext(MainContext)
+
     const handleForm = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value });
 
@@ -25,12 +28,8 @@ const Login = () => {
         e.preventDefault()
         axios.post('/api/users/login', form)
             .then(resp => {
-                // setLoggedIn(true)
-                // setUserInfo(resp.data.user)
-                setAlert({
-                    message: resp.data.message,
-                    status: 'success'
-                })
+                console.log(resp);
+                setUserInfo(resp.data.user)
                 setTimeout(() => {
                     // if (resp.data.user.role == 1)
                     //     return navigate('/home-page')

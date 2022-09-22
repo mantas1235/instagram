@@ -3,6 +3,7 @@ import db from "../database/connect.js";
 import bcrypt from 'bcrypt'
 import { auth } from '../middleware/auth.js'
 import upload from "../middleware/multer.js";
+import { registerValidator } from "../middleware/validate.js"
 
 const router = express.Router()
 
@@ -21,7 +22,7 @@ router.get('/all-posts/:userid', async (req, res) => {
 })
 
 
-router.post('/register', upload.single('profile_photo'), async (req, res) => {
+router.post('/register', registerValidator, upload.single('profile_photo'), async (req, res) => {
 
     try {
         const userExists = await db.Users.findOne({
@@ -100,7 +101,11 @@ router.get("/", async (req, res) => {
 router.get('/logout', (req, res) => {
     req.session.destroy()
     res.send('Jus sekmingai atsijungete')
+
 })
+
+
+
 router.get('/check-auth', auth, async (req, res) => {
     res.json(req.session.user)
 })

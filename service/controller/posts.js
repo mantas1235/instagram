@@ -1,7 +1,7 @@
 import express, { Router } from "express";
 import { Op } from "sequelize";
 import db from "../database/connect.js";
-import { adminAuth } from '../middleware/auth.js'
+import { auth } from '../middleware/auth.js'
 import upload from "../middleware/multer.js";
 import { postValidator } from "../middleware/validate.js";
 
@@ -59,13 +59,18 @@ router.get("/userpost/:id", async (req, res) => {
 });
 
 //sukuria nauja irasa duomenu bazeje
-router.post("/new", upload.single('image'), async (req, res) => {
+router.post("/new", upload.single('image'), auth, async (req, res) => {
+
   try {
+    console.log(req.file)
     if (req.file)
       req.body.image = '/uploads/' + req.file.filename
+
+    req.body.userId = req.session.user.id
     new db.Posts(req.body).save();
     res.json({ message: "Irasas sekmingai sukurtas" });
   } catch (error) {
+    console.log(error);
     res.status(500).send("Ivyko serverio klaida");
   }
 
@@ -91,7 +96,7 @@ router.get('/search/:keyword', async (req, res) => {
 
 
 
-router.put("/edit/:id", upload.single('image'), async (req, res) => {
+router.put("/edit/:id", upload.single('image'), auth, async (req, res) => {
 
   try {
     if (req.file)
@@ -108,7 +113,7 @@ router.put("/edit/:id", upload.single('image'), async (req, res) => {
 
 });
 
-router.delete("/delete/:id", async (req, res) => {
+router.delete("/delete/:id", auth, async (req, res) => {
 
 
   try {

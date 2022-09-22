@@ -31,12 +31,12 @@ const Register = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        const forma = new FormData
+        const forma = new FormData()
 
         for (const key in form) {
             forma.append(key, form[key])
         }
-        axios.post('/api/users/register', form)
+        axios.post('/api/users/register', forma)
             .then(resp => {
                 setAlert({
                     message: resp.data,

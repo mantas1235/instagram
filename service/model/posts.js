@@ -14,10 +14,7 @@ const Posts = (sequelize) => {
     },
     content: {
       type: DataTypes.STRING,
-    },
-    comment_count: {
-      type: DataTypes.STRING,
-    },
+    }
   };
 
   return sequelize.define("posts", Schema);
